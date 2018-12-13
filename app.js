@@ -7,3 +7,22 @@
 // but with return, function returning a result of the function to where it was called.
 // 3. we could use that reurn value as much as we want in diffrent part of our program 
 
+// 2. Palindrome again
+function checkPalindrome(str) {
+    str = str.toLowerCase();
+
+    reverseStr = reverseFunction(str);
+    if(str.localeCompare(reverseStr) === 0) {
+        console.log(true);
+    } else {
+        console.log(false);
+    }    
+}
+
+function reverseFunction(defaultStr) {
+    return defaultStr.split("").reverse().join("");
+}
+
+checkPalindrome("RadaR"); //true
+checkPalindrome("Borscht"); //false
+checkPalindrome("baB");
