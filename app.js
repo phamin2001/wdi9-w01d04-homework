@@ -25,4 +25,16 @@ function reverseFunction(defaultStr) {
 
 checkPalindrome("RadaR"); //true
 checkPalindrome("Borscht"); //false
-checkPalindrome("baB");
+
+// 3. Digit Sum
+function sumDigits(num) {
+    let strNum = num.toString();
+    let digits = strNum.split("");
+    let sumOfDigits = 0;
+    for(let i = 0; i < digits.length; i++) {
+        sumOfDigits += parseInt(digits[i], 10);
+    }
+    return sumOfDigits;
+}
+
+console.log(sumDigits(42));
