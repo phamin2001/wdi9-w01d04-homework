@@ -165,3 +165,26 @@ function reverseFunction2(defaultStr) {
 
 console.log(checkPalindromeWithSpace("Bird rib"));  //true
 console.log(checkPalindromeWithSpace("Sit on a potato pan Otis")); //true;
+
+// 5.
+function checkPalindromeWithPunctuation(str) {  
+    str = str.toLowerCase();
+    str = eliminateSpace(str);
+    str = eliminatePunctuation(str);
+    
+    reverseStr = reverseFunction2(str);
+    
+    if(str.localeCompare(reverseStr) === 0) {
+        return true;
+    } else {
+        return false;
+    }    
+}
+
+function eliminatePunctuation(string) {
+    return string.replace(/[^a-z0-9]/g, "");
+}
+
+console.log(checkPalindromeWithPunctuation("Sit on a potato pan, Otis!!!")); //true
+console.log(checkPalindromeWithPunctuation("A man, a plan, a canal: Panama.")); //true
+
