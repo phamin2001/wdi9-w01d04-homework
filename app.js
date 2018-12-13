@@ -38,3 +38,12 @@ function sumDigits(num) {
 }
 
 console.log(sumDigits(42));
+
+// 4. Pythagoras
+function calculateSide(perpendicular, base) {
+    powerOfHypotenuse = Math.pow(perpendicular, 2) + Math.pow(base, 2);
+    let hypotenuse = Math.sqrt(powerOfHypotenuse);
+    return hypotenuse;
+}
+
+console.log(calculateSide(10, 6));
