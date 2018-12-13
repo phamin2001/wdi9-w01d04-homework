@@ -58,3 +58,30 @@ function sumArray(arrayOfNum){
 }
 
 console.log(sumArray([1, 2, 3, 4, 5, 6]));
+
+// 6. Prime Numbers
+function checkPrime(num) {
+    if(num < 2) {
+        return false;
+    } else{
+        let squareOfNum = Math.sqrt(num);
+        for(let i = 2; i < squareOfNum + 1; i++) {
+            if(num % i === 0) {
+                return false;
+            }
+        }
+        return true;        
+    }    
+}
+
+console.log(checkPrime(11));
+
+function printPrimes(num) {
+    for(let i = 0; i < num + 1; i++) {
+        if(checkPrime(i)) {
+            console.log(i + " is prime.");
+        }
+    }
+}
+
+printPrimes(97);
