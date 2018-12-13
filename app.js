@@ -143,3 +143,25 @@ function reverseString(str) {
 console.log(reverseString("hi how are you?"));
 
 // 4.
+function checkPalindromeWithSpace(str) {
+    str = str.toLowerCase();
+    str = eliminateSpace(str);
+    reverseStr = reverseFunction2(str);
+    if(str.localeCompare(reverseStr) === 0) {
+        return true;
+    } else {
+        return false;
+    }    
+}
+
+function eliminateSpace(string) {
+    let regE = /\s/g;
+    return string.replace(regE, '');
+}
+
+function reverseFunction2(defaultStr) {
+    return defaultStr.split("").reverse().join("");
+}
+
+console.log(checkPalindromeWithSpace("Bird rib"));  //true
+console.log(checkPalindromeWithSpace("Sit on a potato pan Otis")); //true;
