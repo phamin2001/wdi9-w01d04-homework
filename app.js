@@ -11,7 +11,7 @@
 function checkPalindrome(str) {
     str = str.toLowerCase();
 
-    reverseStr = reverseFunction(str);
+    let reverseStr = reverseFunction(str);
     if(str.localeCompare(reverseStr) === 0) {
         console.log(true);
     } else {
@@ -146,7 +146,7 @@ console.log(reverseString("hi how are you?"));
 function checkPalindromeWithSpace(str) {
     str = str.toLowerCase();
     str = eliminateSpace(str);
-    reverseStr = reverseFunction2(str);
+    let reverseStr = reverseFunction2(str);
     if(str.localeCompare(reverseStr) === 0) {
         return true;
     } else {
@@ -171,8 +171,7 @@ function checkPalindromeWithPunctuation(str) {
     str = str.toLowerCase();
     str = eliminateSpace(str);
     str = eliminatePunctuation(str);
-    
-    reverseStr = reverseFunction2(str);
+    let reverseStr = reverseFunction2(str);
     
     if(str.localeCompare(reverseStr) === 0) {
         return true;
@@ -182,9 +181,28 @@ function checkPalindromeWithPunctuation(str) {
 }
 
 function eliminatePunctuation(string) {
-    return string.replace(/[^a-z0-9]/g, "");
+    return string.replace(/[^a-z0-9\s]/g, "");
 }
 
 console.log(checkPalindromeWithPunctuation("Sit on a potato pan, Otis!!!")); //true
 console.log(checkPalindromeWithPunctuation("A man, a plan, a canal: Panama.")); //true
 
+// 6.
+function wordPalindrome(str) {
+    str = str.toLowerCase();
+    str = eliminatePunctuation(str);
+    let arrayOfReverseWords = reverseStrWithSpaces(str);
+
+    if(str.localeCompare(arrayOfReverseWords) === 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function reverseStrWithSpaces(stringWithSpaces) {
+    return stringWithSpaces.split(" ").reverse().join(" ");
+}
+
+let str = "\"Son, I am able,\" she said. \"Though you scare me, watch!\" said I, \"Beloved,\" I said, \"watch me scare you!\" Though, said she: \"able am I, son.\"";
+console.log(wordPalindrome(str));
